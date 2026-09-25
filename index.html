@@ -8,7 +8,36 @@
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
 body { background: #121214; color: #fff; padding: 20px; padding-bottom: 60px; }
 
-h1 { text-align: center; margin-bottom: 25px; color: #00ffcc; font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; }
+h1 {
+text-align: center; 
+margin-bottom: 25px; 
+color: #fff; /* Белая основа для эффекта яркой лампы */
+font-size: 2.2rem; 
+text-transform: uppercase; 
+letter-spacing: 3px;
+
+/* Применяем жёлтую анимацию */
+animation: yellowNeonPulse 2.5s infinite alternate ease-in-out;
+}
+
+/* Анимация жёлтого мерцания */
+@keyframes yellowNeonPulse {
+0%, 100% { 
+text-shadow: 
+0 0 4px #fff,
+0 0 10px #ffee00,
+0 0 20px #ffee00,
+0 0 40px #ffaa00,
+0 0 70px #ff5500;
+}
+50% { 
+text-shadow: 
+0 0 2px #fff,
+0 0 5px #ffee00,
+0 0 15px #ffee00,
+0 0 30px #ffaa00;
+}
+}
 
 /* Кнопки фильтров */
 .filters { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; position: sticky; top: 0; background: #121214; padding: 10px 0; z-index: 100; }
@@ -31,7 +60,11 @@ h1 { text-align: center; margin-bottom: 25px; color: #00ffcc; font-size: 2rem; t
 
 /* Инфо внутри карточки */
 .game-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-.game-title { font-size: 1.4rem; margin-bottom: 8px; color: #fff; }
+.game-title { .game-title { font-size: 1.4rem; 
+margin-bottom: 8px; 
+color: #fff; /* Аккуратное статичное жёлтое свечение */ text-shadow: 
+0 0 4px #ffee00,
+0 0 12px #ffaa00; }
 .game-desc { font-size: 0.95rem; color: #b3b3b3; line-height: 1.4; margin-bottom: 15px; flex-grow: 1; }
 
 /* Теги особенностей */
@@ -41,11 +74,12 @@ h1 { text-align: center; margin-bottom: 25px; color: #00ffcc; font-size: 2rem; t
 </head>
 <body>
 
-<h1>🎮 Выбери свою игру</h1>
+<h1>👾 Семейный технопарк PIXEL</h1>
 
 <!-- Блок фильтров (категории) -->
 <div class="filters">
 <button class="filter-btn active" onclick="filterGames('all', this)">✨ Все игры</button>
+<button class="filter-btn" onclick="filterGames('team', this)">🥳 Avatar Arena</button>
 <button class="filter-btn" onclick="filterGames('kids', this)">🐣 Для младших</button>
 <button class="filter-btn" onclick="filterGames('action', this)">🎯 Стрелялки / Экшен</button>
 <button class="filter-btn" onclick="filterGames('funny', this)">🥳 Веселые / Симуляторы</button>
@@ -56,7 +90,178 @@ h1 { text-align: center; margin-bottom: 25px; color: #00ffcc; font-size: 2rem; t
 
 
 
+<!-- ИГРА 1 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://pr5.zoon.ru/vnYpoxUAmLBjDHxkj-MMdQ/600x338%2Cq85/HdCYnbSKuxhrT7S1kE4qzoI3apTHFnoQxxUBwGqqUy5oRi28y9sfHmHXM2zFonbP3qO1QLSCx3ChlR-r4CM-GDwgs5B4PGpr-GBnyKzzDtVa9Ssnzq0UxU1PK5dYRyYZbNMNj3pMVIpwDRap9NvegE6158n2_rpCXo5e2e-1PEYSWe-D8IXW7EqS0GnxhPTau5TnxzL_3Nf9ythZ3g0E86ZQ-mw4atq8TZZpr51O0y2A2yAZwSOXPLki1Rif5hNaZ1aXgOBo2jgyzSfsv-VetoJ3P3rY_YQB9jD2exm2Xi3q7PRHORd55-YtTuapwY3Yn80Yofwh4I4XCyI7tfsEzQ">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Вечеринка</h3>
+<p class="game-desc">Динамичный набор из 8 командных мини‑игр в виртуальной реальности - для праздника, встречи друзей или первого знакомства с VR. Побеждает не самый опытный игрок, а самая дружная и слаженная команда - тут важны поддержка и общий азарт!.</p>
+<div class="game-tags">
+<span class="tag">#Командная</span>
+<span class="tag">#Соревнование</span>
+<span class="tag">#6+</span>
+</div>
+</div>
+</div>
+
+
+
+<!-- ИГРА 2 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://static.tildacdn.com/tild3836-3431-4030-b836-633861303435/party2.png">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Вечеринка 2</h3>
+<p class="game-desc">Ещё больше драйва, ещё ярче эмоции, ещё веселее в команде! Целых 12 мини‑игр, где каждая раскрывает отдельный навык: от реакции и меткости до чувства ритма и командной тактики.</p>
+<div class="game-tags">
+<span class="tag">#Командная</span>
+<span class="tag">#Соревнование</span>
+<span class="tag">#6+</span>
+</div>
+</div>
+</div>
+
+
+
 <!-- ИГРА 3 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://static.tildacdn.com/tild3933-3362-4438-b938-646338373538/photo.png">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Магическая Вечеринка</h3>
+<p class="game-desc">Представь: ты надеваешь шлем и оказываешься в зачарованном лесу. Руны мерцают, в воздухе летают искры, а рядом друзья. Вас ждет ира, полная магии и чудес. Вперед за победой!</p>
+<div class="game-tags">
+<span class="tag">#Командная</span>
+<span class="tag">#Соревнование</span>
+<span class="tag">#6+</span>
+</div>
+</div>
+</div>
+
+
+
+<!-- ИГРА 4 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://static.tildacdn.com/tild3163-6564-4161-b639-306435313063/magnific_use-the-upl.jpg">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Агенты</h3>
+<p class="game-desc">Вокруг тебя футуристический город. По рации звучит приказ: «Защитите генератор и обезвредьте дронов!» Рядом — твоя команда, и только вместе вы сможете выполнить задачу, одни прикрывают, другие взламывают терминалы, третьи держат оборону.</p>
+<div class="game-tags">
+<span class="tag">#Сюжетная</span>
+<span class="tag">#Шутер</span>
+<span class="tag">#16+</span>
+</div>
+</div>
+</div>
+
+
+
+<!-- ИГРА 5 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://miks-electrokarting.ru/upload/iblock/a88/p3j8kklrvmeph9ytqwpsfkkz9bl5bb9t.webp">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Tactics</h3>
+<p class="game-desc">Тактический командный VR‑шутер с реалистичной графикой и упором на слаженную работу команды. Сражение в разных режимах: «Бой насмерть», «Одна жизнь», «Гонка вооружений», «Установка бомбы». В арсенале — 14 видов оружия и снаряжение (гранаты, мины, аптечки), есть ночной режим и 5 специализаций персонажей.</p>
+<div class="game-tags">
+<span class="tag">#Тактическая</span>
+<span class="tag">#Шутер</span>
+<span class="tag">#16+</span>
+</div>
+</div>
+</div>
+
+
+
+<!-- ИГРА 6 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://pic.rtbcdn.ru/video/2024-11-19/90/90/90909279287607f31c720543225827d9.jpg">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Battle</h3>
+<p class="game-desc">Врывайся в бой: каждая секунда решает исход схватки. Выбирай роль, прикрывай напарников, используй укрытия и гранаты - победа достаётся тем, кто действует как единый механизм. Собери команду - и докажи, что именно вы - лучшие на арене!</p>
+<div class="game-tags">
+<span class="tag">#Геройская</span>
+<span class="tag">#Шутер</span>
+<span class="tag">#12+</span>
+</div>
+</div>
+</div>
+
+
+
+<!-- ИГРА 7 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://avatars.mds.yandex.net/i?id=179a99d7fb9f4ff18539e639d4ffa2cec82c0ff8-3695599-images-thumbs&n=13">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Vegas</h3>
+<p class="game-desc">Роскошь и хаос сталкиваются на 4 этажах: шикарные залы, игровые зоны и VIP‑комнаты теперь кишат зомби. Врывайся в бой: прикрывай напарников, используй узкие коридоры как ловушки и выбивай рекорды в локальной таблице. Каждый этаж - новая тактика, новые угрозы и новые поводы для легенды. Собери отряд - и докажи, что именно твоя команда достойна трофея «Короли Вегаса»!</p>
+<div class="game-tags">
+<span class="tag">Сюжетная</span>
+<span class="tag">#Шутер</span>
+<span class="tag">#16+</span>
+</div>
+</div>
+</div>
+
+
+
+<!-- ИГРА 8 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://static.tildacdn.com/tild3230-3432-4833-b337-373662636632/Frame_1000007042.png">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Zombies</h3>
+<p class="game-desc">Темнота, хрипы за спиной и счёт идёт на секунды: волна за волной орды зомби проверяют твою смелость и слаженность команды. Выбирай роль, прикрывай напарников, грамотно расходуй боеприпасы — и помни: один промах может стоить всей команде победы. VR делает ужас по-настоящему осязаемым: ты чувствуешь каждый шаг, каждый выстрел и каждый момент, когда враг подбирается слишком близко.</p>
+<div class="game-tags">
+<span class="tag">Сюжетная</span>
+<span class="tag">#Выживание</span>
+<span class="tag">#16+</span>
+</div>
+</div>
+</div>
+
+
+
+<!-- ИГРА 9 -->
+<div class="game-card" data-category="team">
+<!-- Вместо эмодзи 🗺️ вы потом пропишете путь к картинке, например: src="images/job_sim.jpg" -->
+<img class="game-img" src="https://avatars.mds.yandex.net/i?id=4ff6e6533238e3d89ac09c4f678c3845_l-5669136-images-thumbs&n=13">
+<div class="badge-age">6+</div>
+<div class="badge-players">🧍 14 чел</div>
+<div class="game-info">
+<h3 class="game-title">Horror</h3>
+<p class="game-desc">Тьма скрывает то, что лучше не видеть. Каждый шорох - предупреждение, каждый поворот - испытание. В режиме Horror VR стирает грань между игрой и реальностью: ты чувствуешь, как холодеет спина, когда за углом кто‑то шевелится. Действуй вместе с командой: один ищет ключ, другой прикрывает, третий следит за окружением. Здесь побеждает не самый меткий, а самый собранный. Хватит ли тебе смелости пройти до конца?</p>
+<div class="game-tags">
+<span class="tag">Сюжетная</span>
+<span class="tag">#Квест</span>
+<span class="tag">#16+</span>
+</div>
+</div>
+</div>
+
+
+
+<!-- ИГРА 10 -->
 <div class="game-card" data-category="action">
 <img class="game-img" src="https://static.tildacdn.com/tild3164-3538-4632-b733-316663633135/1.jpg" alt="Superhot VR">
 <div class="badge-age">12+</div>
@@ -93,6 +298,9 @@ card.classList.add('hidden');
 }
 });
 }
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>
